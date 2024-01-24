@@ -176,7 +176,7 @@
     piper
     pipx
     pkg-config
-    prismlauncher
+    prismlauncher-qt5
     protonup-qt
     python3
     python311Packages.pip
