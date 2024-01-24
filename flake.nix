@@ -27,10 +27,13 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/laptop/configuration.nix
+            ./modules/nixos/bootloader/systemd.nix
+            ./modules/nixos/graphics/nvidia.nix
+            ./modules/nixos/pipewire.nix
+            ./modules/nixos/networking.nix
+            ./modules/nixos/desktopEnvironment/kde.nix
             inputs.home-manager.nixosModules.default
           ];
         };
-
-
     };
 }
