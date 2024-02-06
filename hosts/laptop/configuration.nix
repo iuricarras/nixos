@@ -30,24 +30,7 @@
   };
 
   services.xserver.enable = true;
-  nixpkgs.config.allowUnfree = true;
   
-  services = {
-    syncthing = {
-      enable = true;
-      user = "iuricarras";
-      dataDir = "/home/iuricarras/.syncthing";
-      configDir = "/home/iuricarras/.config/syncthing";
-    };
-    ratbagd.enable = true;
-    flatpak.enable = true; 
-    openvpn.servers = {
-      serverVPN  = { config = '' config /root/nixos/openvpn/server.ovpn ''; autoStart = false; };
-    }; 
-  };
-  
-
-
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   
   services.xserver.xkb.layout = "pt";
@@ -55,7 +38,7 @@
   services.printing.enable = true;
 
   users.users.iuricarras = {
-     isNormalUser = true;
+     isNormalUser = true; 
      description = "Iuri Carrasqueiro";
      extraGroups = [ "wheel" "libvirtd" ];
    };
@@ -66,68 +49,10 @@
     };
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
-
-  
-  environment.systemPackages = with pkgs; [
-    (jetbrains.idea-ultimate.override { jdk = jdk21;})
-    appimage-run
-    blanket
-    blender
-    btop
-    ciscoPacketTracer8
-    cmake
-    deluge-gtk
-    discord
-    firefox
-    fuse
-    gamemode
-    gcc13
-    gengetopt
-    git 
-    gnome.gnome-tweaks
-    gnomeExtensions.appindicator
-    gnumake
-    goverlay  
-    haruna
-    heroic
-    home-manager
-    libsForQt5.kalk
-    lshw
-    lutris
-    mangohud
-    neofetch
-    nextcloud-client
-    openvpn
-    piper
-    pipx
-    pkg-config
-    prismlauncher-qt5
-    protonup-qt
-    python3
-    python311Packages.pip
-    python311Packages.vdf 
-    spotify
-    unzip
-    r2modman     
-    virtiofsd
-    vscode
-    wine
-    wireshark
-    wmctrl
-    xarchiver
-    xwaylandvideobridge
+  fonts.packages = with pkgs; [
+    font-awesome
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
-
-  programs.steam = {
-    enable = true;
-    package = with pkgs; steam.override { extraPkgs = pkgs: [ attr ]; };
-  };
-
 
   system.stateVersion = "23.11";
 }

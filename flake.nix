@@ -32,6 +32,8 @@
             ./modules/nixos/pipewire.nix
             ./modules/nixos/networking.nix
             ./modules/nixos/desktopEnvironment/kde.nix
+            ./modules/nixos/programs.nix
+            ./modules/nixos/services.nix
             inputs.home-manager.nixosModules.default
           ];
         };
