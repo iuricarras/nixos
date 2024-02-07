@@ -42,6 +42,7 @@
           modules = [ 
             ./hosts/server/configuration.nix
             ./modules/server/firewall.nix
+            ./modules/server/services.nix
             inputs.home-manager.nixosModules.default
           ];
         };
