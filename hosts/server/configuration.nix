@@ -25,7 +25,6 @@
   time.timeZone = "Europe/Lisbon";
 
   console = {
-    font = "Lat2-Terminus16";
     keyMap = "pt-latin1";
   };
 
