@@ -37,5 +37,13 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+      nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./hosts/server/configuration.nix
+            ./modules/server/firewall.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
     };
 }
