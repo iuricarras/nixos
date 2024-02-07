@@ -43,6 +43,8 @@
             ./hosts/server/configuration.nix
             ./modules/server/firewall.nix
             ./modules/server/services.nix
+            ./modules/server/nvidia.nix
+            ./modules/server/programs.nix
             inputs.home-manager.nixosModules.default
           ];
         };

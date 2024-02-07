@@ -30,59 +30,29 @@
 
   nixpkgs.config.allowUnfree = true;
   
-  services.xserver.videoDrivers = ["nvidia"];
-  
-  hardware.opengl = {
-  	enable = true;
-  	driSupport = true;
-    driSupport32Bit = true;
-  };
-  
-  hardware.nvidia = {
-  	modesetting.enable = true;
-  	powerManagement.enable = false;
-  	powerManagement.finegrained = false;
-  	open = false;
-  	nvidiaSettings = true;
-  	package = config.boot.kernelPackages.nvidiaPackages.stable;
-  	prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-	  };
-  }; 
-
-
   time.timeZone = "Europe/Lisbon";
 
   console = {
     keyMap = "pt-latin1";
   };
 
-  users.users.meri = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; 
-  };
+  virtualisation.docker.enable = true;
 
-  users.users.plex = {
-    extraGroups = [ "users" ];
-  };
-
-  environment.systemPackages = with pkgs; [
-    git
-    lshw
-  ];
+  users.users = {
+    meri = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "docker" ]; 
+    };
+    plex = {
+      extraGroups = [ "users" ];
+    }
+  };  
 
   home-manager = {
     users = {
       "meri" = import ./home.nix;
     };
   };
-
-  programs.nix-ld.enable = true;
 
   system.stateVersion = "23.11";
 }

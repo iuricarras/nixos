@@ -7,5 +7,10 @@
     };
     openssh.enable = true;
     logind.lidSwitch = "ignore";
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
+    nginx.enable = true;
   };
 }
