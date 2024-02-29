@@ -59,6 +59,7 @@
             ./modules/nixos/services.nix
             ./modules/nixos/services.nix
             ./modules/nixos/desktopEnvironment/kde.nix
+            ./modules/nixos/programs.nix
             inputs.home-manager.nixosModules.default
           ];
         };

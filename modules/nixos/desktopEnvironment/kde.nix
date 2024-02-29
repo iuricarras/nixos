@@ -10,4 +10,9 @@
   };
   
   programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [
+    libsForQt5.kdenlive
+    libsForQt5.kalk
+    haruna
+  ];
 }

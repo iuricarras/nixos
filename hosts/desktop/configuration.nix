@@ -50,56 +50,6 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    wget
-    plymouth
-    firefox
-    discord
-    neofetch
-    steam
-    lutris
-    mangohud
-    goverlay
-    nextcloud-client
-    transmission-remote-gtk
-    obs-studio
-    vscode
-    plex-media-player
-    haruna
-    (prismlauncher.override { jdks = [ jdk8 jdk17 ]; })
-    jdk21
-    gamemode
-    gamescope
-    winetricks
-    wineWowPackages.stable
-    (jetbrains.idea-ultimate.override { jdk = jdk21; })
-    obs-studio-plugins.obs-vaapi
-    blender  
-    spotify
-    libsForQt5.kdenlive
-    openvpn
-    pavucontrol
-    zoom-us
-    xwaylandvideobridge
-    #unstable.r2modman
-    #ciscoPacketTracer8
-    deluge-gtk
-    piper
-    blanket
-    btop
-    heroic
-    github-desktop
-    vulkan-tools
-    python3
-    python311Packages.vdf
-    gparted
-    ntfs3g
-    efibootmgr
-    os-prober  
-    git
-  ];
-
   system.stateVersion = "23.11";
 }
 
