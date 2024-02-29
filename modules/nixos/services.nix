@@ -11,7 +11,8 @@
     flatpak.enable = true;
     openvpn.servers = {
       serverVPN  = { config = '' config /root/nixos/openvpn/server.ovpn ''; autoStart = false; };
-    }; 
+    };
+    printing.enable = true; 
   };
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;

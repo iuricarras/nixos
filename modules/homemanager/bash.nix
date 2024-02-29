@@ -3,10 +3,8 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      "nixos-flakes" = "sudo nixos-rebuild switch --flake /home/iuricarras/github/nixos#laptop";
+      "nixos-flakes-laptop" = "sudo nixos-rebuild switch --flake /home/iuricarras/Github/nixos#laptop";
+      "nixos-flakes-desktop" = "sudo nixos-rebuild switch --flake /home/iuricarras/Github/nixos#desktop";
     };
-    initExtra = ''
-      neofetch
-    '';
   };
 }

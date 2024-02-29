@@ -48,5 +48,19 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./hosts/desktop/configuration.nix
+            ./modules/nixos/bootloader/grub.nix
+            ./modules/nixos/networking.nix
+            ./modules/nixos/graphics/amd.nix
+            ./modules/nixos/pipewire.nix
+            ./modules/nixos/services.nix
+            ./modules/nixos/services.nix
+            ./modules/nixos/desktopEnvironment/kde.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
     };
 }

@@ -35,19 +35,13 @@
   
   services.xserver.xkb.layout = "pt";
 
-  services.printing.enable = true;
-
   users.users.iuricarras = {
      isNormalUser = true; 
      description = "Iuri Carrasqueiro";
      extraGroups = [ "wheel" "libvirtd" ];
    };
 
-  home-manager = {
-    users = {
-      "iuricarras" = import ./home.nix;
-    };
-  };
+
 
   fonts.packages = with pkgs; [
     font-awesome
