@@ -53,8 +53,6 @@
     teams-for-linux
     unrar
     plex-media-player
-    ungoogled-chromium
-    android-tools
     plymouth
     obs-studio
     winetricks

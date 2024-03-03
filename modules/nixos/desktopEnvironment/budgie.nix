@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-   services.xserver = {
+  services.xserver = {
     desktopManager.budgie.enable = true;
     displayManager = {
       lightdm.enable = true;

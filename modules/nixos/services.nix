@@ -14,6 +14,9 @@
     };
     printing.enable = true; 
   };
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    vmware.host.enable = true;
+  };
   programs.virt-manager.enable = true;
 }
