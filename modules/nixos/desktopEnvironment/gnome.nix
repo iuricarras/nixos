@@ -8,6 +8,8 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
+    gnomeExtensions.ideapad
+    papirus-icon-theme
   ];
 }
     

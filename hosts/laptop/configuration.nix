@@ -41,7 +41,11 @@
      extraGroups = [ "wheel" "libvirtd" ];
    };
 
-
+  home-manager = {
+    users = {
+      "iuricarras" = import ./home.nix;
+    };
+  };
 
   fonts.packages = with pkgs; [
     font-awesome

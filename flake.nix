@@ -31,7 +31,7 @@
             ./modules/nixos/graphics/nvidia.nix
             ./modules/nixos/pipewire.nix
             ./modules/nixos/networking.nix
-            ./modules/nixos/desktopEnvironment/kde.nix
+            ./modules/nixos/desktopEnvironment/gnome.nix
             ./modules/nixos/programs.nix
             ./modules/nixos/services.nix
             inputs.home-manager.nixosModules.default
@@ -56,7 +56,6 @@
             ./modules/nixos/networking.nix
             ./modules/nixos/graphics/amd.nix
             ./modules/nixos/pipewire.nix
-            ./modules/nixos/services.nix
             ./modules/nixos/services.nix
             ./modules/nixos/desktopEnvironment/kde.nix
             ./modules/nixos/programs.nix
