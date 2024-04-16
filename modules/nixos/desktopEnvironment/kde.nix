@@ -1,18 +1,18 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.xserver = {
-    desktopManager.plasma5.enable = true;
+  services = {
+    desktopManager.plasma6.enable = true;
     displayManager = {
       sddm.enable = true;
-      defaultSession = "plasmawayland";
+      defaultSession = "plasma";
     };
   };
   
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
-    libsForQt5.kdenlive
-    libsForQt5.kalk
+    kdePackages.kdenlive
+    kdePackages.kalk
     haruna
   ];
 }

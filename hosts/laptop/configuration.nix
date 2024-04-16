@@ -38,7 +38,7 @@
   users.users.iuricarras = {
      isNormalUser = true; 
      description = "Iuri Carrasqueiro";
-     extraGroups = [ "wheel" "libvirtd" ];
+     extraGroups = [ "wheel" "libvirtd" "vboxusers" "docker" ];
    };
 
   home-manager = {

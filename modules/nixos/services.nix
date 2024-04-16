@@ -9,14 +9,14 @@
     };
     ratbagd.enable = true;
     flatpak.enable = true;
-    openvpn.servers = {
-      serverVPN  = { config = '' config /root/nixos/openvpn/server.ovpn ''; autoStart = false; };
-    };
     printing.enable = true; 
+
   };
   virtualisation = {
     libvirtd.enable = true;
     vmware.host.enable = true;
+    virtualbox.host.enable = true;
+    docker.enable = true;
   };
   programs.virt-manager.enable = true;
 }

@@ -5,6 +5,7 @@
   
   environment.systemPackages = with pkgs; [
     (jetbrains.idea-ultimate.override { jdk = jdk21;})
+    (prismlauncher-qt5.override { jdks = [ jdk8 jdk17 ]; })
     appimage-run
     blanket
     blender
@@ -12,6 +13,7 @@
     ciscoPacketTracer8
     cmake
     discord
+    efibootmgr
     firefox
     fuse
     gamemode
@@ -19,6 +21,7 @@
     gcc13
     gengetopt
     git
+    github-desktop
     gnumake
     goverlay
     gparted  
@@ -30,38 +33,35 @@
     neofetch
     nextcloud-client
     ntfs3g
+    obs-studio
+    obs-studio-plugins.obs-vaapi
     openvpn
+    os-prober
+    pavucontrol
     piper
     pipx
     pkg-config
-    (prismlauncher-qt5.override { jdks = [ jdk8 jdk17 ]; })
+    plex-media-player
+    plymouth
     protonup-qt
     python3
     python311Packages.pip
     python311Packages.vdf 
-    spotify
-    unzip
     r2modman     
+    spotify
+    spotify
+    steam
+    teams-for-linux
+    unrar
+    unzip
     virtiofsd
     vscode
+    vulkan-tools
     wine
+    winetricks
     wireshark
     wmctrl
     xarchiver
     xwaylandvideobridge
-    steam
-    teams-for-linux
-    unrar
-    plex-media-player
-    plymouth
-    obs-studio
-    winetricks
-    obs-studio-plugins.obs-vaapi
-    spotify
-    pavucontrol
-    github-desktop
-    vulkan-tools
-    efibootmgr
-    os-prober
   ];
 }
