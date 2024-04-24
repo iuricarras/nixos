@@ -10,20 +10,24 @@
     ];
 	
   fileSystems."/home"= {
-    device = "/dev/disk/by-uuid/1c72e33a-37bb-4516-a1e2-2a779623f110";
+    device = "/dev/disk/by-label/HOME";
     fsType = "ext4";
   };  
   
-  fileSystems."/home/iuricarras/Games/HDD"={
-    device = "/dev/disk/by-uuid/a704692d-e0d7-43cc-b259-0c2b1bd754ac";
+  fileSystems."/home/yuriohnice/Games/HDD"={
+    device = "/dev/disk/by-label/GAMES";
     fsType = "ext4";
   };
-  fileSystems."/home/iuricarras/Videos"={
-	  device = "/dev/disk/by-uuid/a15f1150-586a-40dd-923a-806c422398f2";
+  fileSystems."/home/yuriohnice/Videos"={
+	  device = "/dev/disk/by-label/VIDEOS";
 	  fsType = "ext4";
 	};
 
   networking.hostName = "nixos-tower";
+
+  environment.sessionVariables = {
+    FLAKE = "/home/yuriohnice/Github/nixos";
+  };
 
   time.timeZone = "Europe/Lisbon";
 
@@ -33,20 +37,21 @@
   };
 
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   
   services.xserver.xkb.layout = "pt";
 
-  users.users.iuricarras = {
+  users.users.yuriohnice = {
     isNormalUser = true; 
-    description = "Iuri Carrasqueiro";
-    extraGroups = [ "wheel" "libvirtd" ];
+    description = "yuriohnice";
+    extraGroups = [ "wheel" "libvirtd" "docker" ];
   };
 
   home-manager = {
     users = {
-      "iuricarras" = import ./home.nix;
+      "yuriohnice" = import ./home.nix;
     };
   };
 

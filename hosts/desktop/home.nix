@@ -7,8 +7,8 @@
     ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "iuricarras";
-  home.homeDirectory = "/home/iuricarras";
+  home.username = "yuriohnice";
+  home.homeDirectory = "/home/yuriohnice";
 	
   home.packages = with pkgs; [
   	ulauncher
@@ -24,8 +24,7 @@
       Install = { WantedBy = [ "graphical.target" ]; };
     };
 
-
-  # This value determines the Home Manager release that your
+  # This value determines the Home Manager release that your 
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
   # incompatible changes.

@@ -2,15 +2,14 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     (jetbrains.idea-ultimate.override { jdk = jdk21;})
     (prismlauncher-qt5.override { jdks = [ jdk8 jdk17 ]; })
     appimage-run
     blanket
     blender
     btop
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
     cmake
     discord
     efibootmgr
@@ -42,11 +41,10 @@
     pipx
     pkg-config
     plex-media-player
-    plymouth
     protonup-qt
     python3
-    python311Packages.pip
-    python311Packages.vdf 
+    python312Packages.pip
+    python312Packages.vdf 
     r2modman     
     spotify
     spotify
@@ -63,5 +61,15 @@
     wmctrl
     xarchiver
     xwaylandvideobridge
-  ];
+    webcord
+    steamPackages.steamcmd
+    nh
+    deluge
+  ])
+  
+  ++
+  
+  (with config.nur;[
+    repos.iuricarras.truckersmp-cli
+  ]);
 }
