@@ -4,7 +4,13 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager = {
-      sddm.enable = true;
+      sddm = {
+        enable = true;
+        autoLogin = {
+          enable = true;
+          user = "yuriohnice"; 
+        };
+      };
       defaultSession = "plasma";
     };
   };

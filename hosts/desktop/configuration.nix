@@ -25,6 +25,26 @@
 
   networking.hostName = "nixos-tower";
 
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024;
+  }];
+
+  boot.kernelModules = [ "tcp_bbr" ];
+  boot.kernel.sysctl."net.ipv4.tcp_congestion_control" = "bbr";
+  boot.kernel.sysctl."net.core.default_qdisc" = "fq";
+
+  boot.kernel.sysctl."net.core.wmem_max" = 1073741824; # 1 GiB
+  boot.kernel.sysctl."net.core.rmem_max" = 1073741824; # 1 GiB
+  boot.kernel.sysctl."net.ipv4.tcp_rmem" = "4096 87380 1073741824"; # 1 GiB max
+  boot.kernel.sysctl."net.ipv4.tcp_wmem" = "4096 87380 1073741824"; # 1 GiB max
+
+  boot.extraModulePackages = [
+    # For being able to flip/mirror my webcam.
+    config.boot.kernelPackages.v4l2loopback
+  ];
+
+
   environment.sessionVariables = {
     FLAKE = "/home/yuriohnice/Github/nixos";
   };

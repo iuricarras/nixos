@@ -10,6 +10,8 @@
     gnomeExtensions.appindicator
     gnomeExtensions.ideapad
     papirus-icon-theme
+    yaru-theme
+    ubuntu_font_family
   ];
 }
     

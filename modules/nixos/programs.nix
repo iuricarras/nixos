@@ -4,14 +4,14 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = (with pkgs; [
     (jetbrains.idea-ultimate.override { jdk = jdk21;})
-    (prismlauncher-qt5.override { jdks = [ jdk8 jdk17 ]; })
+    (prismlauncher.override { jdks = [ jdk8 jdk17 ]; })
     appimage-run
     blanket
     blender
     btop
     #ciscoPacketTracer8
     cmake
-    discord
+    #discord
     efibootmgr
     firefox
     fuse
@@ -65,6 +65,7 @@
     steamPackages.steamcmd
     nh
     deluge
+    bottles
   ])
   
   ++
