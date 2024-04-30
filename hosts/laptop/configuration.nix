@@ -29,6 +29,11 @@
     keyMap = "pt-latin1";
   };
 
+
+  environment.sessionVariables = {
+    FLAKE = "/home/iuricarras/Github/nixos";
+  };
+
   services.xserver.enable = true;
   
   nix.settings.experimental-features = [ "nix-command" "flakes"];
