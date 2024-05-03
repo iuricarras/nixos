@@ -26,7 +26,7 @@
             inputs.home-manager.nixosModules.default
           ];
         };
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/laptop/configuration.nix
@@ -34,9 +34,10 @@
             ./modules/nixos/graphics/nvidia.nix
             ./modules/nixos/pipewire.nix
             ./modules/nixos/networking.nix
-            ./modules/nixos/desktopEnvironment/kde.nix
+            ./modules/nixos/desktopEnvironment/gnome.nix
             ./modules/nixos/programs.nix
             ./modules/nixos/services.nix
+            nur.nixosModules.nur            
             inputs.home-manager.nixosModules.default
           ];
         };

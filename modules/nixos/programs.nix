@@ -9,7 +9,7 @@
     blanket
     blender
     btop
-    #ciscoPacketTracer8
+    ciscoPacketTracer8
     cmake
     #discord
     efibootmgr

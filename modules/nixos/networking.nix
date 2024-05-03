@@ -15,9 +15,14 @@
         ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
       '';
     };
+    hosts = {
+      "192.168.6.129" = [ "www.spain_portugal.com" "www.portugal_spain.com" ];
+      "10.14.40.128" = [ "im.web" "static.im.web" "dinamic.im.web"];
+    };
   };
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
+    
 }

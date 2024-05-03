@@ -21,7 +21,8 @@
   };
   
   networking.hostName = "nixos-laptop";
-  
+
+
   time.timeZone = "Europe/Lisbon";
 
   console = {

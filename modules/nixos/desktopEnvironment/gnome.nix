@@ -9,6 +9,7 @@
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.ideapad
+    gnomeExtensions.tiling-assistant
     papirus-icon-theme
     yaru-theme
     ubuntu_font_family
