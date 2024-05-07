@@ -25,6 +25,8 @@
 
   networking.hostName = "nixos-tower";
   
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   swapDevices = [ {
     device = "/var/lib/swapfile";
     size = 16*1024;
