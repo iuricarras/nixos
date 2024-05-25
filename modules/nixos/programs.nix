@@ -11,7 +11,6 @@
     btop
     #ciscoPacketTracer8
     cmake
-    #discord
     efibootmgr
     firefox
     fuse
@@ -66,6 +65,8 @@
     nh
     deluge
     bottles
+    vmware-workstation
+    linuxKernel.packages.linux_zen.vmware
   ])
   
   ++

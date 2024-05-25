@@ -69,6 +69,7 @@
     isNormalUser = true; 
     description = "yuriohnice";
     extraGroups = [ "wheel" "libvirtd" "docker" ];
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -76,6 +77,12 @@
       "yuriohnice" = import ./home.nix;
     };
   };
+  services.syncthing = {
+      enable = true;
+      user = "yuriohnice";
+      dataDir = "/home/yuriohnice/.syncthing";
+      configDir = "/home/yuriohnice/.config/syncthing";
+    };
 
   system.stateVersion = "23.11";
 }
