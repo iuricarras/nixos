@@ -82,17 +82,25 @@
 	pastel
 	lxqt.lxqt-policykit
 	ksuperkey
-	nerdfonts
 	killall
 	lxappearance
+	xorg.xbacklight
+	sddm-chili-theme
   ]);
+
+  services = {
+    xserver.windowManager.bspwm.enable = true;
+    displayManager.sddm.enable = true;
+	  gvfs.enable = true;
+	  gnome.gnome-keyring.enable = true;
+  };
+  
+  xdg.portal = {
+    enable = true;
+	  extraPortals = [pkgs.xdg-desktop-portal-gtk];
+	  config.common.default = "*";
+  };
+
 	programs.zsh.enable = true;
-    services.xserver.windowManager.bspwm.enable = true;
-    services.displayManager.sddm.enable = true;
-	xdg.portal.enable = true;
-	xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-	xdg.portal.config.common.default = "*";
 	security.polkit.enable = true;
-	services.gvfs.enable = true;
-	services.gnome.gnome-keyring.enable = true;
 }

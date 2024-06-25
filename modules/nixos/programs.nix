@@ -9,7 +9,7 @@
     blanket
     blender
     btop
-    #ciscoPacketTracer8
+    ciscoPacketTracer8
     cmake
     efibootmgr
     firefox
@@ -65,8 +65,7 @@
     nh
     deluge
     bottles
-    vmware-workstation
-    linuxKernel.packages.linux_zen.vmware
+    fastfetch
   ])
   
   ++
