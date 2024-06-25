@@ -2,7 +2,7 @@
 {
   hardware.opengl = {
     enable = true;
-    driSupport = true;
+    #driSupport = true;
     extraPackages = [
       pkgs.libGL
     ];
@@ -10,7 +10,7 @@
     #extraPackages32 = [
     #  pkgs.driversi686Linux.amdvlk
     #];
-    setLdLibraryPath = true;
+    #setLdLibraryPath = true;
   };
   environment.variables.AMD_VULKAN_ICD = "RADV";
 }

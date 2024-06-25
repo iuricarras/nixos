@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../../modules/homemanager/bash.nix
+    #../../modules/homemanager/bash.nix
     ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
   	ulauncher
   ];
-
   systemd.user.services.ulauncher = {
       Unit = { Description = "Start Ulauncher"; };
       Service = {

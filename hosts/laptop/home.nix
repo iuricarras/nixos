@@ -11,7 +11,8 @@
   home.homeDirectory = "/home/iuricarras";
 	
   home.packages = with pkgs; [
-  	ulauncher
+  	Ulauncher
+    keychain
   ];
 
   systemd.user.services.ulauncher = {

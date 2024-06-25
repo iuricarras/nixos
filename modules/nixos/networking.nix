@@ -18,6 +18,7 @@
     hosts = {
       "192.168.6.129" = [ "www.spain_portugal.com" "www.portugal_spain.com" ];
       "10.14.40.128" = [ "im.web" "static.im.web" "dinamic.im.web"];
+      "192.168.138.128" = [ "www.one.com" "www.two.com" "www.three.com"];
     };
   };
   hardware.bluetooth = {

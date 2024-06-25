@@ -11,6 +11,7 @@
     #virtualbox.host.enable = true;
     #vmware.host.enable = true;
     docker.enable = true;
+    waydroid.enable = true;
   };
   programs.virt-manager.enable = true;
 

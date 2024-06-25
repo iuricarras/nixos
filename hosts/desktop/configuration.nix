@@ -46,9 +46,12 @@
     config.boot.kernelPackages.v4l2loopback
   ];
 
-
   environment.sessionVariables = {
     FLAKE = "/home/yuriohnice/Github/nixos";
+    XDG_CACHE_HOME  = "/home/yuriohnice/.cache";
+    #XDG_CONFIG_HOME = "/home/yuriohnice/.config";
+    XDG_DATA_HOME   = "/home/yuriohnice/.local/share";
+    XDG_STATE_HOME  = "/home/yuriohnice/.local/state";
   };
 
   time.timeZone = "Europe/Lisbon";
@@ -69,7 +72,7 @@
     isNormalUser = true; 
     description = "yuriohnice";
     extraGroups = [ "wheel" "libvirtd" "docker" ];
-    shell = pkgs.zsh;
+    
   };
 
   home-manager = {

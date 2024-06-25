@@ -86,6 +86,8 @@
 	lxappearance
 	xorg.xbacklight
 	sddm-chili-theme
+	redshift
+	libsForQt5.networkmanager-qt
   ]);
 
   services = {
@@ -103,4 +105,13 @@
 
 	programs.zsh.enable = true;
 	security.polkit.enable = true;
+	services.gvfs.enable = true;
+	services.gnome.gnome-keyring.enable = true;
+	security.pam.services.sddm.enableGnomeKeyring = true;
+	programs.ssh.startAgent = true;
+	programs.seahorse.enable = true;
+	services.xserver.displayManager.setupCommands = ''
+		eval $(/run/wrappers/bin/gnome-keyring-daemon --start --daemonize)
+		export SSH_AUTH_SOCK
+	'';
 }

@@ -51,6 +51,7 @@
     teams-for-linux
     unrar
     unzip
+    vesktop
     virtiofsd
     vscode
     vulkan-tools
@@ -60,12 +61,12 @@
     wmctrl
     xarchiver
     xwaylandvideobridge
-    webcord
     steamPackages.steamcmd
     nh
     deluge
     bottles
     fastfetch
+    remmina
   ])
   
   ++

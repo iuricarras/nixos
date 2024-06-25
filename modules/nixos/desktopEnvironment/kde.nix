@@ -6,10 +6,10 @@
     displayManager = {
       sddm = {
         enable = true;
-        autoLogin = {
-          enable = true;
-          user = "yuriohnice"; 
-        };
+        #autoLogin = {
+        #  enable = true;
+        #  user = "yuriohnice"; 
+        #};
       };
       defaultSession = "plasma";
     };
