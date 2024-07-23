@@ -1,12 +1,12 @@
 { config, lib, pkgs, ... }:
 {
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     #driSupport = true;
     extraPackages = [
       pkgs.libGL
     ];
-    driSupport32Bit = true;
+    enable32Bit = true;
     #extraPackages32 = [
     #  pkgs.driversi686Linux.amdvlk
     #];

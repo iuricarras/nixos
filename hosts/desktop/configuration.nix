@@ -68,24 +68,26 @@
   
   services.xserver.xkb.layout = "pt";
 
-  users.users.yuriohnice = {
-    isNormalUser = true; 
-    description = "yuriohnice";
-    extraGroups = [ "wheel" "libvirtd" "docker" ];
-    
-  };
+  mainUser.enable = true;
+  mainUser.userName = "yuriohnice";
+
+  syncthing.enable = true;
+  syncthing.userName = "yuriohnice";
 
   home-manager = {
     users = {
       "yuriohnice" = import ./home.nix;
     };
   };
-  services.syncthing = {
-      enable = true;
-      user = "yuriohnice";
-      dataDir = "/home/yuriohnice/.syncthing";
-      configDir = "/home/yuriohnice/.config/syncthing";
-    };
+
+
+    security.pam.loginLimits = [
+    { domain = "*"; item = "memlock"; type = "hard"; value = "unlimited"; }
+    { domain = "*"; item = "memlock"; type = "soft"; value = "unlimited"; }
+  ];
+
+  gaming.enable = true;
+  college.enable = false;
 
   system.stateVersion = "23.11";
 }

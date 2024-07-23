@@ -61,8 +61,10 @@
             ./modules/nixos/graphics/amd.nix
             ./modules/nixos/pipewire.nix
             ./modules/nixos/services.nix
-            ./modules/nixos/desktopEnvironment/gnome.nix
+            ./modules/nixos/desktopEnvironment/kde.nix
             ./modules/nixos/programs.nix
+            ./modules/nixos/programs
+            ./modules/nixos/system
             nur.nixosModules.nur
             inputs.home-manager.nixosModules.default
           ];
