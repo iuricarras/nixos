@@ -27,19 +27,7 @@
   
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 16*1024;
-  }];
-
-  boot.kernelModules = [ "tcp_bbr" ];
-  boot.kernel.sysctl."net.ipv4.tcp_congestion_control" = "bbr";
-  boot.kernel.sysctl."net.core.default_qdisc" = "fq";
-
-  boot.kernel.sysctl."net.core.wmem_max" = 1073741824; # 1 GiB
-  boot.kernel.sysctl."net.core.rmem_max" = 1073741824; # 1 GiB
-  boot.kernel.sysctl."net.ipv4.tcp_rmem" = "4096 87380 1073741824"; # 1 GiB max
-  boot.kernel.sysctl."net.ipv4.tcp_wmem" = "4096 87380 1073741824"; # 1 GiB max
+  swap.enable = true;
 
   boot.extraModulePackages = [
     # For being able to flip/mirror my webcam.
@@ -68,24 +56,31 @@
   
   services.xserver.xkb.layout = "pt";
 
-  users.users.yuriohnice = {
-    isNormalUser = true; 
-    description = "yuriohnice";
-    extraGroups = [ "wheel" "libvirtd" "docker" ];
-    
-  };
+  desktopEnvironment.kde.enable = true;
+  desktopEnvironment.kde.userName = "yuriohnice";
+
+
+  mainUser.enable = true;
+  mainUser.userName = "yuriohnice";
+
+  syncthing.enable = true;
+  syncthing.userName = "yuriohnice";
 
   home-manager = {
     users = {
       "yuriohnice" = import ./home.nix;
     };
   };
-  services.syncthing = {
-      enable = true;
-      user = "yuriohnice";
-      dataDir = "/home/yuriohnice/.syncthing";
-      configDir = "/home/yuriohnice/.config/syncthing";
-    };
+
+
+    security.pam.loginLimits = [
+    { domain = "*"; item = "memlock"; type = "hard"; value = "unlimited"; }
+    { domain = "*"; item = "memlock"; type = "soft"; value = "unlimited"; }
+  ];
+
+  gaming.enable = true;
+  college.enable = false;
+  development.enable = true;
 
   system.stateVersion = "23.11";
 }
