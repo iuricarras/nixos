@@ -5,6 +5,8 @@
     [
         ./mainuser.nix
         ./services
+        ./swap.nix
     ];
+
 
 }

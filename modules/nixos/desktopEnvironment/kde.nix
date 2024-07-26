@@ -1,25 +1,43 @@
 { config, lib, pkgs, ... }:
 
+let
+  cfg = config.desktopEnvironment.kde;
+in
 {
-  services = {
-    desktopManager.plasma6.enable = true;
-    displayManager = {
-      sddm = {
-        enable = true;
-        #autoLogin = {
-        #  enable = true;
-        #  user = "yuriohnice"; 
-        #};
-      };
-      defaultSession = "plasma";
+  options.desktopEnvironment.kde = {
+    enable
+      = lib.mkEnableOption "enable kde desktop environment module";
+
+    userName = lib.mkOption {
+      default = "iuricarras";
+      description = ''
+        username
+      '';
     };
   };
-  
-  programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [
-    kdePackages.kdenlive
-    kdePackages.kalk
-    kdePackages.plasma-browser-integration
-    haruna
-  ];
+
+  config = lib.mkIf cfg.enable {
+    services = {
+      desktopManager.plasma6.enable = true;
+      displayManager = {
+        sddm = {
+          enable = true;
+          #autoLogin = {
+          #  enable = true;
+          #  user = "${cfg.userName}";
+          #};
+        };
+        defaultSession = "plasma";
+      };
+    };
+
+    programs.dconf.enable = true;
+    environment.systemPackages = with pkgs; [
+      kdePackages.kdenlive
+      kdePackages.kalk
+      kdePackages.plasma-browser-integration
+      haruna
+    ];
+  };
 }
+

@@ -7,14 +7,9 @@
     blanket
     blender
     btop
-    cmake
     efibootmgr
     firefox
     fuse
-    gcc13
-    gengetopt
-    git
-    gnumake
     gparted  
     home-manager
     lshw
@@ -26,12 +21,8 @@
     openvpn
     os-prober
     pavucontrol
-    pipx
     pkg-config
     plex-media-player
-    python3
-    python312Packages.pip
-    python312Packages.vdf      
     spotify
     unrar
     unzip
@@ -45,12 +36,5 @@
     deluge
     fastfetch
     remmina
-    vim
-    ])
-  
-  ++
-  
-  (with config.nur;[
-    repos.iuricarras.truckersmp-cli
-  ]);
+    ]);
 }
