@@ -67,6 +67,8 @@
     bottles
     fastfetch
     remmina
+    atuin
+    kdePackages.kdenlive
   ])
   
   ++

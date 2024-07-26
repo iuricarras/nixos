@@ -9,7 +9,7 @@
   virtualisation = {
     libvirtd.enable = true;
     #virtualbox.host.enable = true;
-    #vmware.host.enable = true;
+    vmware.host.enable = true;
     docker.enable = true;
     waydroid.enable = true;
   };

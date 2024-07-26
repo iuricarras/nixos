@@ -34,7 +34,7 @@
             ./modules/nixos/graphics/nvidia.nix
             ./modules/nixos/pipewire.nix
             ./modules/nixos/networking.nix
-            ./modules/nixos/desktopEnvironment/bspwm.nix
+            ./modules/nixos/desktopEnvironment/gnome.nix
             ./modules/nixos/programs.nix
             ./modules/nixos/services.nix
             nur.nixosModules.nur            

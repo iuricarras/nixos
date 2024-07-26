@@ -5,9 +5,6 @@
   
   hardware.opengl = {
   	enable = true;
-  	driSupport = true;
-    driSupport32Bit = true;
-    setLdLibraryPath = true;
     extraPackages = [
       pkgs.libGL
     ];
@@ -19,7 +16,7 @@
   	powerManagement.finegrained = true;
   	open = false;
   	nvidiaSettings = true;
-  	package = config.boot.kernelPackages.nvidiaPackages.stable;
+  	package = config.boot.kernelPackages.nvidiaPackages.latest;
   	prime = {
       offload = {
         enable = true;
