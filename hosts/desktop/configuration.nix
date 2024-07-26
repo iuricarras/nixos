@@ -73,7 +73,7 @@
   };
 
 
-    security.pam.loginLimits = [
+  security.pam.loginLimits = [
     { domain = "*"; item = "memlock"; type = "hard"; value = "unlimited"; }
     { domain = "*"; item = "memlock"; type = "soft"; value = "unlimited"; }
   ];

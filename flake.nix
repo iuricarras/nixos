@@ -34,9 +34,10 @@
             ./modules/nixos/graphics/nvidia.nix
             ./modules/nixos/pipewire.nix
             ./modules/nixos/networking.nix
-            ./modules/nixos/desktopEnvironment/gnome.nix
             ./modules/nixos/programs.nix
-            ./modules/nixos/services.nix
+            ./modules/nixos/programs
+            ./modules/nixos/system
+            ./modules/nixos/desktopEnvironment
             nur.nixosModules.nur            
             inputs.home-manager.nixosModules.default
           ];

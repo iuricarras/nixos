@@ -40,23 +40,22 @@
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   
   services.xserver.xkb.layout = "pt";
+  
+  desktopEnvironment.kde.enable = true;
+  desktopEnvironment.kde.userName = "iuricarras";
 
-  users.users.iuricarras = {
-    isNormalUser = true; 
-    description = "Iuri Carrasqueiro";
-    extraGroups = [ "wheel" "libvirtd" "vboxusers" "docker" ];
-   };
+  mainUser.enable = true;
+  mainUser.userName = "iuricarras";
 
+  syncthing.enable = true;
+  syncthing.userName = "iuricarras";
+  
   home-manager = {
     users = {
       "iuricarras" = import ./home.nix;
     };
   };
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerdfonts
-  ];
+  
   services.openssh.enable = true;
   #services.udev.extraRules = ''
   #  ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
@@ -64,27 +63,10 @@
 
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
-
-  #services.auto-cpufreq.enable = true;
-    # optionally, you can configure your auto-cpufreq settings, if you have any
-  #services.auto-cpufreq.settings = {
-  #  charger = {
-  #    governor = "performance";
-  #    turbo = "auto";
-  #  };
-
-  #  battery = {
-  #    governor = "powersave";
-  #    turbo = "auto";
-  #  };
-  #};
   
-  services.syncthing = {
-      enable = true;
-      user = "iuricarras";
-      dataDir = "/home/iuricarras/.syncthing";
-      configDir = "/home/iuricarras/.config/syncthing";
-    };
+  gaming.enable = true;
+  college.enable = false;
+  development.enable = true;
 
   
   system.stateVersion = "23.11";
