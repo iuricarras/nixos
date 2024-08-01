@@ -33,7 +33,6 @@ in
 
     programs.dconf.enable = true;
     environment.systemPackages = with pkgs; [
-      kdePackages.kdenlive
       kdePackages.kalk
       kdePackages.plasma-browser-integration
       haruna

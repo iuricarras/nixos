@@ -3,9 +3,9 @@
 {
     imports =
     [
-        ./kde.nix
-        ./gnome.nix
-        ./bspwm.nix
+        ./amd.nix
+        ./nvidia.nix
     ];
+
 
 }

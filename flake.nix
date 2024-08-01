@@ -31,10 +31,7 @@
           modules = [ 
             ./hosts/laptop/configuration.nix
             ./modules/nixos/bootloader/systemd.nix
-            ./modules/nixos/graphics/nvidia.nix
-            ./modules/nixos/pipewire.nix
-            ./modules/nixos/networking.nix
-            ./modules/nixos/programs.nix
+            ./modules/nixos/graphics
             ./modules/nixos/programs
             ./modules/nixos/system
             ./modules/nixos/desktopEnvironment

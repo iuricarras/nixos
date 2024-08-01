@@ -22,6 +22,7 @@
   
   networking.hostName = "nixos-laptop";
 
+  networking.enable = true;
 
   time.timeZone = "Europe/Lisbon";
 
@@ -36,6 +37,10 @@
   };
 
   services.xserver.enable = true;
+
+  graphics.nvidia.enable = true;
+
+  audio.enable = true;
   
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   
@@ -57,9 +62,6 @@
   };
   
   services.openssh.enable = true;
-  #services.udev.extraRules = ''
-  #  ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
-  #'';
 
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
@@ -67,8 +69,9 @@
   gaming.enable = true;
   college.enable = false;
   development.enable = true;
+  imageAndVideo.enable = false;
+  misc.enable = true;
 
-  
   system.stateVersion = "23.11";
 }
 

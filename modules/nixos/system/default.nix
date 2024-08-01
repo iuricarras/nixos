@@ -6,6 +6,8 @@
         ./mainuser.nix
         ./services
         ./swap.nix
+        ./audio.nix
+        ./networking.nix
     ];
 
 
