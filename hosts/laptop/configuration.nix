@@ -34,6 +34,10 @@
 
   environment.sessionVariables = {
     FLAKE = "/home/iuricarras/Github/nixos";
+    XDG_CACHE_HOME  = "/home/iuricarras/.cache";
+    #XDG_CONFIG_HOME = "/home/yuriohnice/.config";
+    XDG_DATA_HOME   = "/home/iuricarras/.local/share";
+    XDG_STATE_HOME  = "/home/iuricarras/.local/state";
   };
 
   services.xserver.enable = true;

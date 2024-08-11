@@ -11,7 +11,6 @@
       ciscoPacketTracer8
       github-desktop
       teams-for-linux
-      vscode
       wireshark
     ]);
 
