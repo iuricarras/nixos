@@ -38,6 +38,7 @@
       wmctrl
       xarchiver
       xwaylandvideobridge
+      tldr
     ]);
 
     programs.appimage.binfmt = true;

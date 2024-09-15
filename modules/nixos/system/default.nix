@@ -8,6 +8,7 @@
         ./swap.nix
         ./audio.nix
         ./networking.nix
+        ./plymouth.nix
     ];
 
 

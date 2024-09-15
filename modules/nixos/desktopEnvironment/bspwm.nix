@@ -91,7 +91,6 @@ in
 		networkmanager_dmenu
 		dmenu
 		pastel
-		lxqt.lxqt-policykit
 		mate.mate-polkit
 		ksuperkey
 		killall
@@ -121,7 +120,6 @@ in
 			config.common.default = "*";
 		};
 
-		programs.zsh.enable = true;
 		security.polkit.enable = true;
 		security.pam.services.sddm.enableGnomeKeyring = true;
 		programs.ssh.startAgent = true;
