@@ -20,6 +20,8 @@
     options = [ "nofail" "x-systemd.device-timeout=5" ];
   };
   
+  plymouth.enable = true;
+
   networking.hostName = "nixos-laptop";
 
   networking.enable = true;
@@ -50,8 +52,8 @@
   
   services.xserver.xkb.layout = "pt";
   
-  desktopEnvironment.kde.enable = true;
-  desktopEnvironment.kde.userName = "iuricarras";
+  desktopEnvironment.bspwm.enable = true;
+  desktopEnvironment.bspwm.laptop = true;
 
   mainUser.enable = true;
   mainUser.userName = "iuricarras";
@@ -76,6 +78,22 @@
   imageAndVideo.enable = false;
   misc.enable = true;
 
+
+  systemd.tmpfiles.settings = {
+    "ideapad-set-conservation-mode" = {
+      "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode" = {
+        "f+" = {
+          group = "root";
+          user = "root";
+          mode = "0644";
+          argument = "1";
+        };
+      };
+    };
+  };
+
+
+  swap.enable = true;
   system.stateVersion = "23.11";
 }
 

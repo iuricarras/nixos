@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.gaming.enable {
     environment.systemPackages = (with pkgs; [ 
-      (prismlauncher.override { jdks = [ jdk8 jdk17 ]; })
+      (prismlauncher.override { jdks = [ jdk8 jdk17 jdk21]; })
       gamemode
       gamescope
       goverlay

@@ -92,6 +92,7 @@ in
 		dmenu
 		pastel
 		lxqt.lxqt-policykit
+		mate.mate-polkit
 		ksuperkey
 		killall
 		lxappearance
@@ -99,11 +100,17 @@ in
 		sddm-chili-theme
 		redshift
 		libsForQt5.networkmanager-qt
+		python312Packages.pygobject3
+		python312Packages.gst-python
+		python312Packages.pycairo
+		networkmanagerapplet
+		sound-theme-freedesktop
 		]);
 
 		services = {
 			xserver.windowManager.bspwm.enable = true;
 			displayManager.sddm.enable = true;
+			displayManager.sddm.theme = "${import ./archcraft.nix {inherit pkgs; }}";
 			gvfs.enable = true;
 			gnome.gnome-keyring.enable = true;
 		};
