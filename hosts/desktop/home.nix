@@ -22,6 +22,30 @@
       };
       Install = { WantedBy = [ "graphical.target" ]; };
     };
+
+#  gtk.enable = true;
+
+#  qt.enable = true;
+
+# platform theme "gtk" or "gnome"
+#qt.platformTheme = "gtk";
+
+# name of the qt theme
+#qt.style.name = "adwaita-dark";
+
+# detected automatically:
+# adwaita, adwaita-dark, adwaita-highcontrast,
+# adwaita-highcontrastinverse, breeze,
+# bb10bright, bb10dark, cde, cleanlooks,
+# gtk2, motif, plastique
+
+# package to use
+#qt.style.package = pkgs.adwaita-qt6;
+
+
+#gtk.theme.package = pkgs.adw-gtk3;
+#gtk.theme.name = "adw-gtk3";
+
   # This value determines the Home Manager release that your 
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

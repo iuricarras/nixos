@@ -55,10 +55,7 @@
           modules = [ 
             ./hosts/desktop/configuration.nix
             ./modules/nixos/bootloader/systemd.nix
-            ./modules/nixos/networking.nix
-            ./modules/nixos/graphics/amd.nix
-            ./modules/nixos/pipewire.nix
-            ./modules/nixos/programs.nix
+            ./modules/nixos/graphics
             ./modules/nixos/programs
             ./modules/nixos/system
             ./modules/nixos/desktopEnvironment

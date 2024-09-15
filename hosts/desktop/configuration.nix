@@ -24,6 +24,8 @@
 	};
 
   networking.hostName = "nixos-tower";
+
+  networking.enable = true;
   
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -56,9 +58,13 @@
   
   services.xserver.xkb.layout = "pt";
 
-  desktopEnvironment.kde.enable = true;
-  desktopEnvironment.kde.userName = "yuriohnice";
+  graphics.amd.enable = true;
 
+  audio.enable = true;
+
+  desktopEnvironment.gnome.enable = true;
+  desktopEnvironment.gnome.userName = "yuriohnice";
+  #desktopEnvironment.hyprland.enable = true;
 
   mainUser.enable = true;
   mainUser.userName = "yuriohnice";
@@ -81,6 +87,8 @@
   gaming.enable = true;
   college.enable = false;
   development.enable = true;
+  imageAndVideo.enable = false;
+  misc.enable = true;
 
   system.stateVersion = "23.11";
 }
