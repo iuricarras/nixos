@@ -25,6 +25,16 @@
       Install = { WantedBy = [ "graphical.target" ]; };
     };
 
+  systemd.user.services.gnsserver = {
+      Unit = { Description = "Start Ulauncher"; };
+      Service = {
+        Type = "exec";
+        ExecStart = "${pkgs.gns3-server}/bin/gns3server --local";
+        Restart = "on-failure";
+    };
+      Install = { WantedBy = [ "graphical.target" ]; };
+    };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
