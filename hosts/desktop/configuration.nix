@@ -63,8 +63,6 @@
   audio.enable = true;
 
   desktopEnvironment.gnome.enable = true;
-  desktopEnvironment.gnome.userName = "yuriohnice";
-  #desktopEnvironment.hyprland.enable = true;
 
   mainUser.enable = true;
   mainUser.userName = "yuriohnice";
