@@ -24,8 +24,9 @@
       bottles
       cartridges
       rpcs3
+      pcsx2
     ])
-  
+ 
     ++
     
     (with config.nur;[

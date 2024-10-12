@@ -3,8 +3,9 @@
 {
   imports =
     [
-    #../../modules/homemanager/bash.nix
+    ../../modules/homemanager/programs
     ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "yuriohnice";
@@ -22,6 +23,9 @@
       };
       Install = { WantedBy = [ "graphical.target" ]; };
     };
+
+  gns3.enable = true;
+  gns3.userName = "yuriohnice";
 
 #  gtk.enable = true;
 

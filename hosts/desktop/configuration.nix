@@ -27,7 +27,7 @@
 
   networking.enable = true;
   
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  #boot.kernelPackages = pkgs.linuxPackages_zen;
 
   swap.enable = true;
 
@@ -83,7 +83,7 @@
   ];
 
   gaming.enable = true;
-  college.enable = false;
+  college.enable = true;
   development.enable = true;
   imageAndVideo.enable = false;
   misc.enable = true;

@@ -36,13 +36,6 @@
     virtualisation = {
       #virtualbox.host.enable = true;
       vmware.host.enable = true;
-    };
-
-    #services.gns3-server.enable = true;
-    #services.gns3-server.auth.enable = false;
-    #services.gns3-server.ubridge.enable = true;
-    #services.gns3-server.vpcs.enable = true;
-    #services.gns3-server.dynamips.enable = true;
-    
+    };    
   };
 }
