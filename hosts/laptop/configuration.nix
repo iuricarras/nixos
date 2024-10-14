@@ -71,7 +71,7 @@
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
   
-  gaming.enable = true;
+  gaming.enable = false;
   college.enable = true;
   development.enable = true;
   imageAndVideo.enable = false;

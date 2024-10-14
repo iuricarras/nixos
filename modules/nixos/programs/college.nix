@@ -21,6 +21,7 @@
       ubridge
       inetutils
       netcat-gnu
+      moonlight-qt
     ]);
 
     users.groups.ubridge = { };
