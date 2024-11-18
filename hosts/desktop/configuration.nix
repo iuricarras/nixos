@@ -62,17 +62,17 @@
 
   audio.enable = true;
 
-  desktopEnvironment.gnome.enable = true;
+  desktopEnvironment.bspwm.enable = true;
 
   mainUser.enable = true;
-  mainUser.userName = "yuriohnice";
+  mainUser.userName = "iuricarras";
 
   syncthing.enable = true;
-  syncthing.userName = "yuriohnice";
+  syncthing.userName = "iuricarras";
 
   home-manager = {
     users = {
-      "yuriohnice" = import ./home.nix;
+      "iuricarras" = import ./home.nix;
     };
   };
 
@@ -88,6 +88,6 @@
   imageAndVideo.enable = false;
   misc.enable = true;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
 

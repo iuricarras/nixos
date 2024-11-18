@@ -58,7 +58,7 @@ in
 		neofetch
 		pavucontrol
 		powertop
-		qt5ct
+		libsForQt5.qt5ct
 		libsForQt5.qtstyleplugin-kvantum
 		simplescreenrecorder
 		trash-cli

@@ -22,7 +22,7 @@
       powerManagement.finegrained = true;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
       prime = {
         offload = {
           enable = true;

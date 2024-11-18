@@ -20,7 +20,7 @@
       steam
       wine
       winetricks 
-      steamPackages.steamcmd
+      steamcmd
       bottles
       cartridges
       rpcs3

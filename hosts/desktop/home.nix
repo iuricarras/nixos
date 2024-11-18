@@ -8,8 +8,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "yuriohnice";
-  home.homeDirectory = "/home/yuriohnice";
+  home.username = "iuricarras";
+  home.homeDirectory = "/home/iuricarras";
 	
   home.packages = with pkgs; [
   	ulauncher
@@ -25,7 +25,7 @@
     };
 
   gns3.enable = true;
-  gns3.userName = "yuriohnice";
+  gns3.userName = "iuricarras";
 
 #  gtk.enable = true;
 
@@ -58,5 +58,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

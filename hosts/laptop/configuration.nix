@@ -52,7 +52,8 @@
   
   services.xserver.xkb.layout = "pt";
   
-  desktopEnvironment.gnome.enable = true;
+  desktopEnvironment.bspwm.enable = true;
+  desktopEnvironment.bspwm.laptop = true;
 
   mainUser.enable = true;
   mainUser.userName = "iuricarras";
@@ -66,12 +67,12 @@
     };
   };
   
-  #services.openssh.enable = true;
+  services.openssh.enable = true;
 
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
   
-  gaming.enable = false;
+  gaming.enable = true;
   college.enable = true;
   development.enable = true;
   imageAndVideo.enable = false;

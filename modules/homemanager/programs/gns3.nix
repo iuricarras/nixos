@@ -7,7 +7,7 @@ in
   options.gns3 = {
     enable = lib.mkEnableOption "enables gns3 configs";
 		
-		userName = lib.mkOption {
+	userName = lib.mkOption {
       default = "iuricarras";
       description = ''
         username

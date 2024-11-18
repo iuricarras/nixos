@@ -22,6 +22,7 @@
       inetutils
       netcat-gnu
       moonlight-qt
+      nodejs_22
     ]);
 
     users.groups.ubridge = { };
