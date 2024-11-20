@@ -23,6 +23,8 @@
       netcat-gnu
       moonlight-qt
       nodejs_22
+      php83
+      php83Packages.composer
     ]);
 
     users.groups.ubridge = { };
