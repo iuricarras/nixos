@@ -14,11 +14,11 @@
     fsType = "ext4";
   };  
   
-  fileSystems."/home/yuriohnice/Games/HDD"={
+  fileSystems."/home/iuricarras/Games/HDD"={
     device = "/dev/disk/by-label/GAMES";
     fsType = "ext4";
   };
-  fileSystems."/home/yuriohnice/Videos"={
+  fileSystems."/home/iuricarras/Videos"={
 	  device = "/dev/disk/by-label/VIDEOS";
 	  fsType = "ext4";
 	};
@@ -37,11 +37,11 @@
   ];
 
   environment.sessionVariables = {
-    FLAKE = "/home/yuriohnice/Github/nixos";
-    XDG_CACHE_HOME  = "/home/yuriohnice/.cache";
-    #XDG_CONFIG_HOME = "/home/yuriohnice/.config";
-    XDG_DATA_HOME   = "/home/yuriohnice/.local/share";
-    XDG_STATE_HOME  = "/home/yuriohnice/.local/state";
+    FLAKE = "/home/iuricarras/Github/nixos";
+    XDG_CACHE_HOME  = "/home/iuricarras/.cache";
+    #XDG_CONFIG_HOME = "/home/iuricarras/.config";
+    XDG_DATA_HOME   = "/home/iuricarras/.local/share";
+    XDG_STATE_HOME  = "/home/iuricarras/.local/state";
   };
 
   time.timeZone = "Europe/Lisbon";
