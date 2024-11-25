@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs,... }:
 
 {
   options = {
@@ -39,9 +39,12 @@
       xarchiver
       xwaylandvideobridge
       tldr
+      nixd
+      alejandra
     ]);
 
     programs.appimage.binfmt = true;
 
+    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
 }

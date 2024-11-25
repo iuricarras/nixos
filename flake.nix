@@ -11,6 +11,7 @@
     nurpkgs = {
       url = "github:nix-community/NUR";
     };
+    
   };
 
   outputs = inputs@{ self, nixpkgs, nur,... }:
