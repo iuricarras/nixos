@@ -27,7 +27,7 @@
 
   networking.enable = true;
   
-  #boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   swap.enable = true;
 
