@@ -110,6 +110,7 @@ in
 			xserver.windowManager.bspwm.enable = true;
 			displayManager.sddm.enable = true;
 			displayManager.sddm.theme = "${import ./archcraft.nix {inherit pkgs; }}";
+			displayManager.sddm.autoNumlock = true;
 			gvfs.enable = true;
 			gnome.gnome-keyring.enable = true;
 		};
