@@ -20,7 +20,7 @@ in
     users.users.${cfg.userName} = {
       isNormalUser = true;
       description = "${cfg.userName}";
-      extraGroups = [ "wheel" "libvirtd" "docker" "kvm" "ubridge" "wireshark"];
+      extraGroups = [ "wheel" "libvirtd" "docker" "kvm" "ubridge" "wireshark" "network"];
     };
   };
 }
