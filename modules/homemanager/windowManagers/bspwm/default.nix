@@ -11,6 +11,7 @@
         ./rofiThemes
         ./bspwm.nix
         ./sxhkd.nix
+        ./xsettingsd.nix
     ];
 
     options = {
@@ -35,5 +36,8 @@
 
       sxhkd.enable = true;
       sxhkd.config = true;
+
+      xsettingsd.enable = true;
+      xsettingsd.config = true;
     };
 }

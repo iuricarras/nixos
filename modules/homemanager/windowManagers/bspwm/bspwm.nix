@@ -145,8 +145,8 @@
           };
 
           extraConfig = ''
-            xsettingsd --config=$HOME/.config/bspwm/xsettingsd &
-            /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 & 
+            # xsettingsd --config=$HOME/.config/bspwm/xsettingsd &
+            ${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 & 
             # sxhkd -c $HOME/.config/bspwm/sxhkdrc &
 
             ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -156,7 +156,7 @@
 
             xsetroot -cursor_name left_ptr
 
-            bash ~/.fehbg
+            ${pkgs.feh}/bin/feh --no-fehbg --bg-max --randomize ~/Nextcloud/Pictures/wallpapers-slide/* &
 
             redshift-gtk -l 38:-9 &
             nextcloud &
