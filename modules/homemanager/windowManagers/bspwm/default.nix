@@ -9,6 +9,8 @@
         ./polybar.nix
         ./scripts
         ./rofiThemes
+        ./bspwm.nix
+        ./sxhkd.nix
     ];
 
     options = {
@@ -28,5 +30,10 @@
       polybar.enable = true;
       polybar.config = true;
 
+      bspwmWM.enable = true;
+      bspwmWM.config = true;
+
+      sxhkd.enable = true;
+      sxhkd.config = true;
     };
 }
