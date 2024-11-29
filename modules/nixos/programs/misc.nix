@@ -41,6 +41,7 @@
       tldr
       nixd
       alejandra
+      wget
     ]);
 
     programs.appimage.binfmt = true;

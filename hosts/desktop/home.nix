@@ -4,6 +4,7 @@
   imports =
     [
     ../../modules/homemanager/programs
+    ../../modules/homemanager/windowManagers
     ];
 
   # Home Manager needs a bit of information about you and the
@@ -26,6 +27,8 @@
 
   gns3.enable = true;
   gns3.userName = "iuricarras";
+
+  bspwm.enable = true;
 
 #  gtk.enable = true;
 

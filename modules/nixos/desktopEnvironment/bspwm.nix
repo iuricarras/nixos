@@ -17,7 +17,7 @@ in
 		feh
 		sxhkd
 		xsettingsd
-		dunst
+		#dunst
 		light
 		picom
 		polybarFull
@@ -87,7 +87,7 @@ in
 		pywal
 		ueberzug
 		betterlockscreen
-		alacritty
+		#alacritty
 		networkmanager_dmenu
 		dmenu
 		pastel
