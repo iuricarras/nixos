@@ -20,4 +20,6 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+  fonts.enableDefaultPackages = true;
 }

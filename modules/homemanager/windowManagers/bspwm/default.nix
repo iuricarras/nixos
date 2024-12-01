@@ -12,6 +12,7 @@
         ./bspwm.nix
         ./sxhkd.nix
         ./xsettingsd.nix
+        ./gtksettings.nix
     ];
 
     options = {
@@ -39,5 +40,8 @@
 
       xsettingsd.enable = true;
       xsettingsd.config = true;
+
+      gtksettings.enable = true;
+      gtksettings.config = true;
     };
 }

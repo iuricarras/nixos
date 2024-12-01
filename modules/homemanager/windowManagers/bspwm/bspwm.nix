@@ -156,7 +156,7 @@
 
             xsetroot -cursor_name left_ptr
 
-            ${pkgs.feh}/bin/feh --no-fehbg --bg-max --randomize ~/Nextcloud/Pictures/wallpapers-slide/* &
+            ${pkgs.feh}/bin/feh --no-fehbg --bg-fill --randomize ~/Nextcloud/Pictures/wallpapers-slide/* &
 
             redshift-gtk -l 38:-9 &
             nextcloud &

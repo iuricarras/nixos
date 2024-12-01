@@ -16,6 +16,7 @@
       "Net/ThemeName" = "Wave";
       "Net/IconThemeName" = "Luv-Folders-Dark";
       "Gtk/CursorThemeName" = "Vimix";
+      "Gtk/FontName" = "Noto Sans 9";
       "Net/EnableEventSounds" = "0";
       "Net/EnableInputFeedbackSounds" = "0";
       "Xft/DPI" = "-1";
