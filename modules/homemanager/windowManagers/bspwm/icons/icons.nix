@@ -5,8 +5,8 @@ pkgs.stdenv.mkDerivation {
 	src = pkgs.fetchFromGitHub {
 		owner = "iuricarras";
 		repo = "gtk3-themes";
-		rev = "ceee19d63857f5d6575aa657a55c85c23a0e3846";
-		sha256 = "GXpkE5ufyigKg1c1eHU9pONDUfGf1goSE/7Io4E5LLI=";
+		rev = "c8122275804bfc1a1cc54c874c43dabbe4daad51";
+		sha256 = "kjOsjP9F5kzwgX3rkPjvaC9lmdGPuFbZMubasJjyj48=";
 	};
 	dontUnpack = true;
 	installPhase = ''
