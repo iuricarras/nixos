@@ -31,6 +31,9 @@
 
   swap.enable = true;
 
+  plymouth.enable = true;
+  boot.initrd.systemd.enable = true;
+
   boot.extraModulePackages = [
     # For being able to flip/mirror my webcam.
     config.boot.kernelPackages.v4l2loopback

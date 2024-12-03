@@ -27,6 +27,16 @@
       php83Packages.composer
       kubectl
       postman
+
+      #SS
+      veracrypt
+      gnupg
+      openssl
+      thunderbird
+    ]) ++
+    
+    (with config.nur; [
+      repos.k3a.steghide
     ]);
 
     users.groups.ubridge = { };
