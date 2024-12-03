@@ -27,6 +27,7 @@
       php83Packages.composer
       kubectl
       postman
+      obsidian
     ]);
 
     users.groups.ubridge = { };
