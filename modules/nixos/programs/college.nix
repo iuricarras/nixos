@@ -33,10 +33,7 @@
       gnupg
       openssl
       thunderbird
-    ]) ++
-    
-    (with config.nur; [
-      repos.k3a.steghide
+      nur.repos.k3a.steghide
     ]);
 
     users.groups.ubridge = { };

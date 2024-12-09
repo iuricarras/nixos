@@ -25,12 +25,7 @@
       cartridges
       rpcs3
       pcsx2
-    ])
- 
-    ++
-    
-    (with config.nur;[
-      repos.iuricarras.truckersmp-cli
+      nur.repos.iuricarras.truckersmp-cli
     ]);
 
     services.ratbagd.enable = true;
