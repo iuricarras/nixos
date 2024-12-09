@@ -36,7 +36,7 @@
             ./modules/nixos/programs
             ./modules/nixos/system
             ./modules/nixos/desktopEnvironment
-            nur.nixosModules.nur            
+            nur.modules.nixos.default           
             inputs.home-manager.nixosModules.default
           ];
         };
@@ -60,7 +60,7 @@
             ./modules/nixos/programs
             ./modules/nixos/system
             ./modules/nixos/desktopEnvironment
-            nur.nixosModules.nur
+            nur.modules.nixos.default
             inputs.home-manager.nixosModules.default
           ];
         };

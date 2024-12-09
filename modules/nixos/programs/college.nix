@@ -34,10 +34,7 @@
       openssl
       thunderbird
       easyrsa
-    ]) ++
-    
-    (with config.nur; [
-      repos.k3a.steghide
+      nur.repos.k3a.steghide
     ]);
 
     programs.gnupg.agent.enable = true;
