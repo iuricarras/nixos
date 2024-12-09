@@ -31,17 +31,21 @@
 
       #SS
       veracrypt
-      gnupg
       openssl
       thunderbird
+      easyrsa
     ]) ++
     
     (with config.nur; [
       repos.k3a.steghide
     ]);
 
+    programs.gnupg.agent.enable = true;
+    programs.gnupg.agent.pinentryPackage = pkgs.pinentry-tty;
+
     users.groups.ubridge = { };
     
+
      security.wrappers.ubridge = {
       source = "${pkgs.ubridge}/bin/ubridge";
       capabilities = "cap_net_admin,cap_net_raw=ep";

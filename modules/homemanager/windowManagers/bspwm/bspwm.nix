@@ -160,6 +160,7 @@
 
             redshift-gtk -l 38:-9 &
             nextcloud &
+            betterlockscreen -u $HOME/Nextcloud/Pictures/wallpapers-slide/egflISk.png &
           '';
         };
       })
