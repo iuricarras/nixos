@@ -40,14 +40,13 @@
             inputs.home-manager.nixosModules.default
           ];
         };
-      nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.gaiaserver = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/server/configuration.nix
-            ./modules/server/firewall.nix
-            ./modules/server/services.nix
-            ./modules/server/nvidia.nix
-            ./modules/server/programs.nix
+            ./modules/server/nginx
+            ./modules/server/services
+            nur.modules.nixos.default
             inputs.home-manager.nixosModules.default
           ];
         };
