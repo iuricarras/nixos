@@ -1,59 +1,138 @@
 # Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
-    [
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 5;
-    };
-    efi.canTouchEfiVariables = true;
-  };
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/home/meri/disks/ext" =  {
-    device = "/dev/disk/by-label/Media";
-    fsType = "ext4";
-  };
+  networking.hostName = "gaiaserver"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  networking.hostName = "sunshine"; 
-  networking.networkmanager.enable = true;  
+  # Enable networking
+  networking.networkmanager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-  
+  # Set your time zone.
   time.timeZone = "Europe/Lisbon";
 
-  console = {
-    keyMap = "pt-latin1";
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "pt_PT.UTF-8";
+    LC_IDENTIFICATION = "pt_PT.UTF-8";
+    LC_MEASUREMENT = "pt_PT.UTF-8";
+    LC_MONETARY = "pt_PT.UTF-8";
+    LC_NAME = "pt_PT.UTF-8";
+    LC_NUMERIC = "pt_PT.UTF-8";
+    LC_PAPER = "pt_PT.UTF-8";
+    LC_TELEPHONE = "pt_PT.UTF-8";
+    LC_TIME = "pt_PT.UTF-8";
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "pt";
+    variant = "";
+  };
+
+  # Configure console keymap
+  console.keyMap = "pt-latin1";
+
+   environment.sessionVariables = {
+    FLAKE = "/home/gaia/nixos";
+  };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.gaia = {
+    isNormalUser = true;
+    description = "gaia";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    php
+    php83Extensions.gd
+    php83Extensions.pdo_mysql
+    php83Extensions.mbstring
+    php83Extensions.bcmath
+    php83Extensions.xml
+    php83Extensions.curl
+    php83Extensions.zip
+    php83Packages.composer
+    nh
+    openssl
+    nodejs_22
+    bun
+  ];
+
+  services = {
+   mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
+
+  };
+  
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 443 8080 ];
   };
 
   virtualisation.docker.enable = true;
 
-  users.users = {
-    meri = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "docker" ]; 
-    };
-    plex = {
-      extraGroups = [ "users" ];
-    }
-  };  
+  programs.nix-ld.enable = true;
 
-  home-manager = {
-    users = {
-      "meri" = import ./home.nix;
-    };
-  };
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-  system.stateVersion = "23.11";
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+  services.qemuGuest.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.11"; # Did you read the comment?
+
 }
-
