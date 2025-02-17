@@ -31,7 +31,7 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/laptop/configuration.nix
-            ./modules/nixos/bootloader/systemd.nix
+            ./modules/nixos/bootloader/grub.nix
             ./modules/nixos/graphics
             ./modules/nixos/programs
             ./modules/nixos/system

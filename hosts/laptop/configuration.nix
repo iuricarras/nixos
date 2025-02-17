@@ -53,8 +53,7 @@
 
   services.xserver.xkb.layout = "pt";
 
-  desktopEnvironment.bspwm.enable = true;
-  desktopEnvironment.bspwm.laptop = true;
+  desktopEnvironment.kde.enable = true;
 
   mainUser.enable = true;
   mainUser.userName = "iuricarras";
@@ -73,17 +72,17 @@
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
 
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "never";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
+#   services.auto-cpufreq.enable = true;
+#   services.auto-cpufreq.settings = {
+#     battery = {
+#       governor = "powersave";
+#       turbo = "never";
+#     };
+#     charger = {
+#       governor = "performance";
+#       turbo = "auto";
+#     };
+#   };
 
   gaming.enable = true;
   college.enable = true;
@@ -104,6 +103,7 @@
     };
   };
 
+
   swap.enable = true;
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }

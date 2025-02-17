@@ -42,6 +42,8 @@
       nixd
       alejandra
       wget
+      nil
+      hugo
     ]);
 
     programs.appimage.binfmt = true;

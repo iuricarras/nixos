@@ -25,6 +25,7 @@
         "192.168.6.129" = [ "www.spain_portugal.com" "www.portugal_spain.com" ];
         "10.14.40.128" = [ "im.web" "static.im.web" "dinamic.im.web"];
         "192.168.138.128" = [ "www.one.com" "www.two.com" "www.three.com"];
+        "192.168.122.102" = ["panel.test.iuri" "system.test.iuri" "deluge.test.iuri" "dad.test.iuri" "dadapi.test.iuri" "dadws.test.iuri" "nextcloud.test.iuri"];
       };
     };
 

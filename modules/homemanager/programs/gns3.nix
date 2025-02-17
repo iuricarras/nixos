@@ -50,7 +50,7 @@ in
 			[VMware]
 			host_type = ws
 			vmnet_start_range = 10
-			vmnet_end_range = 20
+			vmnet_end_range = 30
 			block_host_traffic = False
 			vmrun_path = /run/current-system/sw/bin/vmrun
 		'';
