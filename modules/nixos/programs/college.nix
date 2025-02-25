@@ -76,7 +76,7 @@
 
     virtualisation = {
       #virtualbox.host.enable = true;
-      #vmware.host.enable = true;
+      vmware.host.enable = true;
       docker.daemon.settings = {
         "insecure-registries" = ["registry.172.22.21.107.sslip.io"];
       };
