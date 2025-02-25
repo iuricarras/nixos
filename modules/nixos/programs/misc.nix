@@ -37,7 +37,7 @@
       vulkan-tools
       wmctrl
       xarchiver
-      xwaylandvideobridge
+      kdePackages.xwaylandvideobridge
       tldr
       nixd
       alejandra
