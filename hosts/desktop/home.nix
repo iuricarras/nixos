@@ -28,7 +28,7 @@
   gns3.enable = true;
   gns3.userName = "iuricarras";
 
-  bspwm.enable = true;
+  #bspwm.enable = true;
 
 #  gtk.enable = true;
 
