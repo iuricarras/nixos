@@ -12,6 +12,7 @@
       blanket
       btop
       deluge
+      discord
       efibootmgr
       fastfetch
       firefox
@@ -31,7 +32,6 @@
       spotify
       unrar
       unzip
-      vesktop
       virtiofsd
       vscode
       vulkan-tools
