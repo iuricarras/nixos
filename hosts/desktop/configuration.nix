@@ -65,7 +65,7 @@
 
   audio.enable = true;
 
-  desktopEnvironment.bspwm.enable = true;
+  desktopEnvironment.kde.enable = true;
 
   mainUser.enable = true;
   mainUser.userName = "iuricarras";
