@@ -10,6 +10,7 @@
         enable = true;
         useOSProber = true;
         timeoutStyle = "menu";
+        configurationLimit =  5;
       };
       timeout = 20;
     };
