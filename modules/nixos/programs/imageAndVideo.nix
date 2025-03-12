@@ -7,7 +7,7 @@
 
  config = lib.mkIf config.imageAndVideo.enable {
     environment.systemPackages = (with pkgs; [
-      blend
+      #blend
       obs-studio
       obs-studio-plugins.obs-vaapi
       kdePackages.kdenlive

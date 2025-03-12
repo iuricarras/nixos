@@ -72,6 +72,12 @@
   services.undervolt.enable = true;
   services.undervolt.coreOffset = -130;
 
+  boot.kernelParams = [
+    "intel_iommu=on"
+    "iommu=pt"
+];
+
+
 #   services.auto-cpufreq.enable = true;
 #   services.auto-cpufreq.settings = {
 #     battery = {
@@ -87,7 +93,7 @@
   gaming.enable = true;
   college.enable = true;
   development.enable = true;
-  imageAndVideo.enable = false;
+  imageAndVideo.enable = true;
   misc.enable = true;
 
   systemd.tmpfiles.settings = {
