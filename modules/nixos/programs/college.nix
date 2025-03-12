@@ -40,6 +40,9 @@
       #thunderbird
       #easyrsa
       #nur.repos.k3a.steghide
+
+      #LTI
+      mininet
     ];
 
     networking.interfaces.pc1.virtual = true;
