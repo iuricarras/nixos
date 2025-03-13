@@ -27,7 +27,7 @@
         };
         devices = [
           "/dev/kvm"
-        "/dev/net/tun"
+          "/dev/net/tun"
         ]
         ;
       };
