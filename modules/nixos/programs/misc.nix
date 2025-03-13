@@ -13,6 +13,7 @@
       btop
       deluge
       discord
+      droidcam
       efibootmgr
       fastfetch
       firefox

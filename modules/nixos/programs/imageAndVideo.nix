@@ -12,7 +12,5 @@
       obs-studio-plugins.obs-vaapi
       kdePackages.kdenlive
     ]);
-
-
   };
 }

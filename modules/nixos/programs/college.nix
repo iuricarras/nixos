@@ -18,7 +18,7 @@
       nmap
       gns3-gui
       gns3-server
-      firefox-devedition
+      #firefox-devedition
       dynamips
       vpcs
       ubridge
