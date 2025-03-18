@@ -11,10 +11,16 @@
     nurpkgs = {
       url = "github:nix-community/NUR";
     };
-    
+    sops-nix.url = "github:Mic92/sops-nix";
+
+    mysecrets = {
+      url = "git+ssh://git@github.com/iuricarras/nix_private.git?ref=main&shallow=1";
+      flake = false;
+    };
+
   };
 
-  outputs = inputs@{ self, nixpkgs, nur,... }:
+  outputs = inputs@{ self, nixpkgs, nur, sops-nix,... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -46,8 +52,10 @@
             ./hosts/server/configuration.nix
             ./modules/server/nginx
             ./modules/server/services
+            ./modules/server/networking
             nur.modules.nixos.default
             inputs.home-manager.nixosModules.default
+            sops-nix.nixosModules.sops
           ];
         };
       nixosConfigurations.nixos-tower = nixpkgs.lib.nixosSystem {

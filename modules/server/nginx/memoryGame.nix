@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 let
   app = "dad-vue";
-  appDomain = "dad.test.iuri";
+  appDomain = "dad.gaiaserver.pt";
   dataDir = "/var/www/${app}/dist";
 in {
 
@@ -34,7 +34,10 @@ in {
     virtualHosts = {
       ${appDomain} = {
         root = "${dataDir}";
-
+        forceSSL = true;
+        sslCertificate = "/var/www/certs/cert";
+        sslCertificateKey = "/var/www/certs/key";
+        
         extraConfig = ''
             index index.html;
         '';

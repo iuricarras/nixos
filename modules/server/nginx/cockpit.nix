@@ -5,16 +5,16 @@
     openFirewall = true;
     settings = {
       WebService = {
-        Origins = ''https://system.test.iuri wss://system.test.iuri'';
+        Origins = ''https://hades.gaiaserver.pt wss://hades.gaiaserver.pt'';
         ProtocolHeader = "X-Forwarded-Proto";
       };
     };
   };
   services.nginx = {
-    virtualHosts."system.test.iuri" =  {
+    virtualHosts."hades.gaiaserver.pt" =  {
       forceSSL = true;
-      sslCertificate = "/var/lib/nginx/domain.crt";
-      sslCertificateKey = "/var/lib/nginx/domain.key";
+      sslCertificate = "/var/www/certs/cert";
+      sslCertificateKey = "/var/www/certs/key";
       locations."/" = {
         proxyPass = "https://127.0.0.1:9090";
         proxyWebsockets = true;

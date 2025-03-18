@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports =
@@ -51,15 +51,15 @@
   # Configure console keymap
   console.keyMap = "pt-latin1";
 
-   environment.sessionVariables = {
-    FLAKE = "/home/gaia/nixos";
+  environment.sessionVariables = {
+    FLAKE = "/home/gaia/github/nixos";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.gaia = {
     isNormalUser = true;
     description = "gaia";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "streaming"];
     packages = with pkgs; [];
   };
 
@@ -85,7 +85,20 @@
     openssl
     nodejs_22
     bun
+    alejandra
+    nixd
+    wireguard-tools
+    hugo
+    dig
+    sops
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
+  fileSystems."/mnt/ext" =  {
+    device = "/dev/disk/by-label/Media";
+    fsType = "ext4";
+  };
 
   services = {
    mysql = {
@@ -93,11 +106,6 @@
       package = pkgs.mariadb;
     };
 
-  };
-  
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 80 443 8080 ];
   };
 
   virtualisation.docker.enable = true;

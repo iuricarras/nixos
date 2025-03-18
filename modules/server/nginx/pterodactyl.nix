@@ -1,10 +1,13 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   app = "pterodactyl";
-  appDomain = "panel.test.iuri";
+  appDomain = "hephaestus.gaiaserver.pt";
   dataDir = "/var/www/${app}/public";
 in {
-
   services.phpfpm.pools.${app} = {
     user = app;
     settings = {
@@ -21,33 +24,35 @@ in {
     };
   };
 
-  users.groups.${app}.members = [ "${app}" ];
+  users.groups.${app}.members = ["${app}"];
   users.users.${app} = {
     isSystemUser = true;
     group = "${app}";
   };
-  users.users.nginx.extraGroups = [ "${app}" ];
-
+  users.users.nginx.extraGroups = ["${app}"];
 
   services.nginx = {
     enable = true;
     virtualHosts = {
       ${appDomain} = {
         root = "${dataDir}";
+        forceSSL = true;
+        sslCertificate = "/var/www/certs/cert";
+        sslCertificateKey = "/var/www/certs/key";
 
         extraConfig = ''
-            index index.php;
+          index index.php;
         '';
 
         locations."/" = {
           extraConfig = ''
-            # First attempt to serve request as file, then
-            # as directory, then fall back to displaying a 404.
-          try_files $uri $uri/ /index.php?$query_string;
+              # First attempt to serve request as file, then
+              # as directory, then fall back to displaying a 404.
+            try_files $uri $uri/ /index.php?$query_string;
           '';
-	      };
+        };
 
-        locations."~ ^(.+\\.php)(.*)$"  = {
+        locations."~ ^(.+\\.php)(.*)$" = {
           extraConfig = ''
             # Check that the PHP script exists before passing it
             include ${config.services.nginx.package}/conf/fastcgi_params;
@@ -71,33 +76,32 @@ in {
     };
   };
 
-  services.redis.servers."redisserver".enable=true;
-  services.redis.servers."redisserver".port=6379;
-
+  services.redis.servers."redisserver".enable = true;
+  services.redis.servers."redisserver".port = 6379;
 
   services.cron = {
     enable = true;
     systemCronJobs = [
-    "* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1"
+      "* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1"
     ];
   };
 
   systemd.services.ptero = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     after = ["redis-redisserver.service"];
     description = "Pterodactyl Queue Worker";
     serviceConfig = {
-    User = "nginx";
-    Group = "nginx";
-    Restart = "always";
-    ExecStart = "${pkgs.php}/bin/php /var/www/pterodactyl/artisan queue:work --queue=high,standard,low --sleep=3 --tries=3";
-    StartLimitBurst = "30";
-    RestartSec = "5s";
+      User = "nginx";
+      Group = "nginx";
+      Restart = "always";
+      ExecStart = "${pkgs.php}/bin/php /var/www/pterodactyl/artisan queue:work --queue=high,standard,low --sleep=3 --tries=3";
+      StartLimitBurst = "30";
+      RestartSec = "5s";
     };
   };
 
   systemd.services.wings = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     after = ["docker.service"];
     requires = ["docker.service"];
     partOf = ["docker.service"];
@@ -105,8 +109,8 @@ in {
     serviceConfig = {
       User = "root";
       WorkingDirectory = "/etc/pterodactyl";
-      LimitNOFILE="4096";
-      PIDFile="/var/run/wings/daemon.pid";
+      LimitNOFILE = "4096";
+      PIDFile = "/var/run/wings/daemon.pid";
       Restart = "on-failure";
       ExecStart = "${pkgs.nur.repos.xddxdd.pterodactyl-wings}/bin/wings";
       StartLimitBurst = "30";
@@ -114,8 +118,7 @@ in {
     };
   };
 
-  environment.systemPackages = (with pkgs; [
-  nur.repos.xddxdd.pterodactyl-wings
-  ]);
+  environment.systemPackages = with pkgs; [
+    nur.repos.xddxdd.pterodactyl-wings
+  ];
 }
-

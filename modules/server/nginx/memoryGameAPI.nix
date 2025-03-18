@@ -1,10 +1,13 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   app = "dad-laravel";
-  appDomain = "dadapi.test.iuri";
+  appDomain = "dadapi.gaiaserver.pt";
   dataDir = "/var/www/${app}/public";
 in {
-
   services.phpfpm.pools.${app} = {
     user = app;
     settings = {
@@ -21,22 +24,24 @@ in {
     };
   };
 
-  users.groups.${app}.members = [ "${app}" ];
+  users.groups.${app}.members = ["${app}"];
   users.users.${app} = {
     isSystemUser = true;
     group = "${app}";
   };
-  users.users.nginx.extraGroups = [ "${app}" ];
-
+  users.users.nginx.extraGroups = ["${app}"];
 
   services.nginx = {
     enable = true;
     virtualHosts = {
       ${appDomain} = {
         root = "${dataDir}";
+        forceSSL = true;
+        sslCertificate = "/var/www/certs/cert";
+        sslCertificateKey = "/var/www/certs/key";
 
         extraConfig = ''
-            index index.php;
+          index index.php;
         '';
 
         locations."/" = {
@@ -45,9 +50,9 @@ in {
             # as directory, then fall back to displaying a 404.
             try_files $uri $uri/ /index.php?$query_string;
           '';
-	      };
+        };
 
-        locations."~ ^(.+\\.php)(.*)$"  = {
+        locations."~ ^(.+\\.php)(.*)$" = {
           extraConfig = ''
             # Check that the PHP script exists before passing it
             include ${config.services.nginx.package}/conf/fastcgi_params;
@@ -71,4 +76,3 @@ in {
     };
   };
 }
-

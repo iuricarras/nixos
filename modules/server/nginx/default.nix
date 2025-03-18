@@ -9,6 +9,9 @@
         ./memoryGame.nix
         ./memoryGameAPI.nix
         ./memoryGameWS.nix
+        ./arr.nix
+        ./overseerr.nix
+        ./homarr.nix
     ];
 
 }
